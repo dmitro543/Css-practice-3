@@ -11,33 +11,28 @@
       </nav>
     </header>
 
-    {{#with hero}}
+    {{#with main}}
        <div class="hero-1">
+         <img src="{{image}}" alt="Hero image" class="photo">
          <div class="content">
-           <h1 class="title">{{title}}</h1>
-           <p class="text">{{text}}</p>
+           <h1 class="title">{{heading}}</h1>
+           <p class="text">{{description}}</p>
+           <a href="{{href}}" class="active-button-2">{{button}}</a>
          </div>
-         <img src="{{photo}}" alt="Hero image" class="photo">
        </div>
     {{/with}}
 
     <div class="hero-2">
-      {{#each blog}}
-         {{> cardBlog data=this}}
+      {{#each featured}}
+         {{> cardBlog-2 data=this}}
       {{/each}}
     </div>
 
-    {{#with form}}
-     <div class="hero-3">
-      <div class="form">
-        <h3 class="form-1">{{title}}</h3>
-        <p class="form-2">{{info}}</p>
-      </div>
-      <div class="active">
-        <a href="{{href}}" class="active-button">{{button}}</a>
-      </div>
-     </div>
-    {{/with}}
+    <div class="hero-3">
+      {{#each actions}}
+        {{> action-2 data=this}}
+      {{/each}}
+    </div>
 
     <footer class="footer">
       <div>
